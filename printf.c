@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_all - Prints anything.
+ * _printf - Prints anything.
  * @format: A list of types of arguments passed to the function.
  *          c: char
  *          i: integer
