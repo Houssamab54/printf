@@ -1,66 +1,65 @@
-#include <stdio.h>
 #include <stdarg.h>
-
+#include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
 /**
- * _printf - prints output according to a format.
- * @format: format string.
- * Return: the number of characters printed (excluding the null byte).
+ * print_all - Prints anything.
+ * @format: A list of types of arguments passed to the function.
+ *          c: char
+ *          i: integer
+ *          f: float
+ *          s: char * (if the string is NULL, print (nil) instead)
+ * Return: void.
  */
 int _printf(const char *format, ...)
 {
-	va_list arg;
-	int printed_chars = 0;
-
-	va_start(arg, format);
-	while (*format)
+	va_list args;
+	char* c = (char*) malloc(sizeof(char));
+	char *s;
+	int i, printed;
+	va_start(args, format);
+	while (format && format[i])
 	{
-		if (*format == '%')
-		{
-			format++;
-			switch (*format)
-			{
-				case 'c':
-				{
-					char c = (char)va_arg(arg, int);
-					putchar(c);
-					printed_chars++;
-					break;
-				}
-				case 's':
-				{
-					char *s = va_arg(arg, char *);
-					if (s == NULL)
-					{
-						fputs("(null)", stdout);
-						printed_chars += 6;
-					}
-					else
-					{
-						while (*s)
-						{
-							putchar(*s);
-							s++;
-							printed_chars++;
-						}
-					}
-					break;
-				}
-				case '%':
-				{
-					putchar('%');
-					printed_chars++;
-					break;
-				}
-			}
-		}
-		else
-		{
-			putchar(*format);
-			printed_chars++;
-		}
-		format++;
-	}
-	va_end(arg);
-
-	return (printed_chars);
+	    if(format[i] == '%')
+	    {
+    		switch (format[i+1])
+    		   {
+    		       case '%':
+                    _putchar('%');
+    				i+=2;
+    				printed++;
+                    break;
+    			case 'c':
+    			    *c = (char) va_arg(args, int);
+    				_putchar(*c);
+    				i+=2;
+    				printed++;
+    				break;
+    			case 's':
+    				s = va_arg(args, char *);
+    				if (s == NULL)
+    				{
+    				    i+=2;
+    					break;
+    				}
+    				printed+=_puts(s);
+    				 i+=2;
+    				break;
+    			default:
+    			    _putchar('%');
+    				i++;
+    				continue;
+    		   }
+    		}
+    		else
+    		{
+    		    *c = format[i];
+    			_putchar(*c);
+    		    printed++;
+    		    i++;
+    		}
+	    }
+	va_end(args);
+	free(c);
+	return printed;
 }
