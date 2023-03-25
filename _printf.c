@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	specifiers speclist[]={
-        {"c", getchar},
+        {"c", _getchar},
 		{"s", _puts},
 		{"%", _putchar_percent},
 		{NULL, NULL}
