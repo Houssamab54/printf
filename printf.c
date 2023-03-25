@@ -4,16 +4,22 @@
 /**
  * _printf - Prints anything.
  * @format: A list of types of arguments passed to the function.
+ *          c: char
+ *          i: integer
+ *          f: float
  *          s: char * (if the string is NULL, print (nil) instead)
  * Return: void.
  */
- 
 int _printf(const char *format, ...)
 {
 	va_list args;
-	char c , *s;
-	int i, printed = -1;
-	
+	char c ;
+	char *s;
+	int i, printed;
+	if (format == NULL)
+	{
+	    return (-1);
+	}
 	va_start(args, format);
 	while (format && format[i])
 	{
@@ -27,7 +33,8 @@ int _printf(const char *format, ...)
     				printed++;
                     break;
     			case 'c':
-    				_putchar((char) va_arg(args, int));
+    			    c = (char) va_arg(args, int);
+    				_putchar(c);
     				i+=2;
     				printed++;
     				break;
@@ -49,7 +56,8 @@ int _printf(const char *format, ...)
     		}
     		else
     		{
-    			_putchar(format[i]);
+    		    c = format[i];
+    			_putchar(c);
     		    printed++;
     		    i++;
     		}
