@@ -24,7 +24,7 @@ int readstring(const char *format, specifiers f_list[], va_list args);
 
 int _putchar(char c);
 
-int _getchar(va_list);
+int getchar(va_list);
 
 int _puts(va_list);
 

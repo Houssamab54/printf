@@ -13,7 +13,7 @@ int _puts(va_list str)
     i =0;
     strig = va_arg(str, char *);
 	if (strig == NULL)
-		str = "(null)";
+		strig = "(null)";
 	for (i = 0; strig[i] != '\0'; i++)
 		_putchar(strig[i]);
 	return (i);
