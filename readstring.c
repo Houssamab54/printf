@@ -27,6 +27,7 @@
 					if (fail == -1)
 						return (-1);
 					printed += fail;
+					i = i + 2;
 					break;
                 }
                 if (f_list[j].coversionspec == NULL && format[i + 1] != ' ')
@@ -35,14 +36,13 @@
                     {
                         _putchar(format[i]);
                         _putchar(format[i + 1]);
-                        printed = printed + 1;
+                        printed = printed + 2;
                     }
                     else
                     {
                         return (-1);
                     }
                 }
-                i = i + 2;
             }
         }
         else
