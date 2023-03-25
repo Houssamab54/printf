@@ -27,7 +27,7 @@
 					if (fail == -1)
 						return (-1);
 					printed += fail;
-					i = i + 2;
+					i = i + 1;
 					break;
                 }
                 if (f_list[j].coversionspec == NULL && format[i + 1] != ' ')
