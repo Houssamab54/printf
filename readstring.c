@@ -23,10 +23,10 @@
             {
                 if (format[i + 1] == f_list[j].coversionspec[0])
                 {
-                    fail = f_list[j].func(arg_list);
+                    fail = f_list[j].func(args);
 					if (fail == -1)
 						return (-1);
-					printed_chars += fail;
+					printed += fail;
 					break;
                 }
                 if (f_list[j].coversionspec == NULL && format[i + 1] != ' ')
@@ -34,7 +34,7 @@
                     if (format[i + 1] != '\0')
                     {
                         _putchar(format[i]);
-                        _write_char(format[i + 1]);
+                        _putchar(format[i + 1]);
                         printed = printed + 2;
                     }
                     else

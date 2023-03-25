@@ -3,18 +3,18 @@
 
 /**
  * _puts - prints a string, followed by a new line, to stdout.
- * @str: a pointer to a string.
- *
- * Return: void.
+ * @str: arg string.
+ * Return: len.
  */
-int _puts(char *str)
+int _puts(va_list str)
 {
     int i;
+    char *strig;
     i =0;
-while (*(str + i) != '\0')
-{
-_putchar(*(str + i));
-i++;
-}
-return i;
+    strig = va_arg(str, char *);
+	if (strig == NULL)
+		str = "(null)";
+	for (i = 0; strig[i] != '\0'; i++)
+		_putchar(strig[i]);
+	return (i);
 }

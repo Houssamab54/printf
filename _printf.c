@@ -12,13 +12,13 @@
 int _printf(const char *format, ...)
 {
 	specifiers speclist[]={
-        {"c", _putchar},
+        {"c", getchar},
 		{"s", _puts},
 		{"%", _putchar_percent},
 		{NULL, NULL}
 	};
 	va_list args;
-	int i, printed;
+	int printed;
 	printed = 0;
 	
 	if (format == NULL)
@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 	    return (-1);
 	}
 	va_start(args, format);
-	printed = readstring(*format,speclist,args);
-	va_end(arg_list);
+	printed = readstring(format,speclist,args);
+	va_end(args);
 	return printed;
 }

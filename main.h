@@ -24,8 +24,10 @@ int readstring(const char *format, specifiers f_list[], va_list args);
 
 int _putchar(char c);
 
-int _puts(char *str);
+int _getchar(va_list);
 
-int _putchar_percent();
+int _puts(va_list);
+
+int _putchar_percent(va_list);
 
 #endif /* main_H */
