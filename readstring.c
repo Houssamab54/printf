@@ -35,14 +35,14 @@
                     {
                         _putchar(format[i]);
                         _putchar(format[i + 1]);
-                        printed = printed + 2;
+                        printed = printed + 1;
                     }
                     else
                     {
                         return (-1);
                     }
                 }
-                i = i + 1;
+                i = i + 2;
             }
         }
         else
