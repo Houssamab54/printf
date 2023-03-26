@@ -11,7 +11,7 @@
  */
 int _printf(const char *format, ...)
 {
-speecifiers speclist[] = {
+specifiers speclist[] = {
 {"c", _getchar},
 {"s", _puts},
 {"%", _putchar_percent},
@@ -19,8 +19,10 @@ speecifiers speclist[] = {
 };
 va_list args;
 int printed;
+
 printed = 0;
 if (format == NULL)
+{
 return (-1);
 }
 va_start(args, format);
