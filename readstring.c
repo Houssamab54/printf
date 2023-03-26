@@ -34,7 +34,7 @@
                 {
                     if (format[i + 1] != '\0')
                     {
-                        _putchar(format[i]);
+                        _putchar('%');
                         _putchar(format[i + 1]);
                         printed = printed + 2;
                     }

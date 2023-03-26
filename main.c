@@ -18,12 +18,14 @@ int main(void)
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
     _printf("\n");
-    printf("%d ,%d",len,len2);
+    printf("\n");
+    printf("%d ,%d\n",len,len2);
     _printf("%% \n");
     printf("%% \n");
-    _printf("%%%%%%%%%%%%%\n");
-    printf("%%%%%%%%%%%%%%\n");
-
+    _printf("%%%%%%\n");
+     printf("%%%%%%\n");
+    _printf("Unknown:[%r]\n");
+    
 
     return (0);
 }
