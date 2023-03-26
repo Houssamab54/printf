@@ -29,4 +29,6 @@ int _puts(va_list);
 
 int _putchar_percent(va_list);
 
+int print_int(va_list);
+
 #endif /* main_H */

@@ -15,6 +15,8 @@ specifiers speclist[] = {
 {"c", _getchar},
 {"s", _puts},
 {"%", _putchar_percent},
+{"d", print_int},
+{"i", print_int},
 {NULL, NULL}
 };
 va_list args;
