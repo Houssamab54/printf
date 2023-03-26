@@ -8,13 +8,14 @@
  */
 int _puts(va_list str)
 {
-    int i;
-    char *strig;
-    i =0;
-    strig = va_arg(str, char *);
-	if (strig == NULL)
-		strig = "(null)";
-	for (i = 0; strig[i] != '\0'; i++)
-		_putchar(strig[i]);
-	return (i);
+int i;
+char *strig;
+
+i = 0;
+strig = va_arg(str, char *);
+if (strig == NULL)
+strig = "(null)";
+for (i = 0; strig[i] != '\0'; i++)
+_putchar(strig[i]);
+return (i);
 }

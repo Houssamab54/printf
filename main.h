@@ -6,8 +6,7 @@
 #include <stdarg.h>
 
 /**
-* struct convert - a type with function to specifier
-*
+* struct specifier - a type with function to specifier
 * @coversionspec: the character
 * @func: the function that handles the char
 */

@@ -11,22 +11,20 @@
  */
 int _printf(const char *format, ...)
 {
-	specifiers speclist[]={
-        {"c", _getchar},
-		{"s", _puts},
-		{"%", _putchar_percent},
-		{NULL, NULL}
-	};
-	va_list args;
-	int printed;
-	printed = 0;
-	
-	if (format == NULL)
-	{
-	    return (-1);
-	}
-	va_start(args, format);
-	printed = readstring(format,speclist,args);
-	va_end(args);
-	return printed;
+speecifiers speclist[] = {
+{"c", _getchar},
+{"s", _puts},
+{"%", _putchar_percent},
+{NULL, NULL}
+};
+va_list args;
+int printed;
+printed = 0;
+if (format == NULL)
+return (-1);
+}
+va_start(args, format);
+printed = readstring(format, speclist, args);
+va_end(args);
+return (printed);
 }

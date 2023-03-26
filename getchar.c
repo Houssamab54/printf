@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * getchar - gets character to print
+ * _getchar - gets character to print
  * @arg: arguments
  * Return: len printed
  */
