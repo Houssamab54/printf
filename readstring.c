@@ -29,7 +29,7 @@
 					printed += fail;
 					i = i + 1;
 					break;
-                }
+                }}
                 if (f_list[j].coversionspec == NULL && format[i + 1] != ' ')
                 {
                     if (format[i + 1] != '\0')
@@ -37,12 +37,12 @@
                         _putchar('%');
                         _putchar(format[i + 1]);
                         printed = printed + 2;
+			i = i + 1;
                     }
                     else
                     {
                         return (-1);
                     }
-                }
             }
         }
         else
