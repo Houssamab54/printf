@@ -9,9 +9,7 @@
  */
 int main(void)
 {
-    int len;
-    unsigned int ui;
-    void *addr;
+  int len, len2;
 
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
@@ -19,10 +17,12 @@ int main(void)
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
-    _printf("");
-    printf("");
-    _printf("%%\n");
-    printf("%%\n");
+    _printf("\n");
+    printf("%d ,%d",len,len2);
+    _printf("%% \n");
+    printf("%% \n");
+    _printf("%%%%%%%%%%%%%\n");
+    printf("%%%%%%%%%%%%%%\n");
 
 
     return (0);
